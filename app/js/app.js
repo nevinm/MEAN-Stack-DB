@@ -10,18 +10,32 @@ var routerApp = angular.module('myApp', [
     'myApp.controllers'
 ]);
 
-routerApp.config(function($stateProvider, $urlRouterProvider){
+routerApp.config(function($stateProvider, $urlRouterProvider) {
 
-	$urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/home');
 
-	$stateProvider
+    $stateProvider
 
-	.state('home',{
-		url:"/home",
-		templateUrl: 'partials/partial-home.html'
-	})
+        .state('home', {
+        url: "/home",
+        templateUrl: 'partials/partial-home.html'
+    })
 
-	.state('about',{
-		
-	})
+    .state('home.list', {
+        url: "/list",
+        templateUrl: 'partials/partial-home-list.html',
+        controller: function($scope) {
+            $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
+        }
+    })
+
+
+    .state('home.paragraph', {
+        url: '/paragraph',
+        template: 'I could sure use a drink right now.'
+    })
+
+    .state('about', {
+
+    })
 });
