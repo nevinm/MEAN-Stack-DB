@@ -1,4 +1,4 @@
-# angular-seed — the seed for AngularJS apps
+# MEAN Stack - Mongo + Express + Angular + Node
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
 You can use it to quickly bootstrap your angular webapp projects and dev environment for these
@@ -49,52 +49,6 @@ out what is the best way to host the static files to comply with the same origin
 applicable. Usually this is done by hosting the files by the backend server or through
 reverse-proxying the backend server(s) and a webserver(s).
 
-
-### Running unit tests
-
-We recommend using [jasmine](http://pivotal.github.com/jasmine/) and
-[Karma](http://karma-runner.github.io) for your unit tests/specs, but you are free
-to use whatever works for you.
-
-Requires [node.js](http://nodejs.org/), Karma (`sudo npm install -g karma`) and a local
-or remote browser.
-
-* start `scripts/test.sh` (on windows: `scripts\test.bat`)
-  * a browser will start and connect to the Karma server (Chrome is default browser, others can be captured by loading the same url as the one in Chrome or by changing the `config/karma.conf.js` file)
-* to run or re-run tests just change any of your source or test javascript files
-
-
-### End to end testing
-
-Angular ships with a baked-in end-to-end test runner that understands angular, your app and allows
-you to write your tests with jasmine-like BDD syntax.
-
-Requires a webserver, node.js + `./scripts/web-server.js` or your backend server that hosts the angular static files.
-
-Check out the
-[end-to-end runner's documentation](http://docs.angularjs.org/guide/dev_guide.e2e-testing) for more
-info.
-
-* create your end-to-end tests in `test/e2e/scenarios.js`
-* serve your project directory with your http/backend server or node.js + `scripts/web-server.js`
-* to run do one of:
-  * open `http://localhost:port/test/e2e/runner.html` in your browser
-  * run the tests from console with [Karma](http://karma-runner.github.io) via
-    `scripts/e2e-test.sh` or `script/e2e-test.bat`
-
-### Continuous Integration
-
-CloudBees have provided a CI/deployment setup:
-
-<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/CloudBees-community/angular-js-clickstart/master/clickstart.json"><img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
-
-If you run this, you will get a cloned version of this repo to start working on in a private git repo, 
-along with a CI service (in Jenkins) hosted that will run unit and end to end tests in both Firefox and Chrome.
-
-### Receiving updates from upstream
-
-When we upgrade angular-seed's repo with newer angular or testing library code, you can just
-fetch the changes and merge them into your project with git.
 
 
 ## Directory Layout
@@ -149,3 +103,30 @@ fetch the changes and merge them into your project with git.
 ## Contact
 
 For more information on AngularJS please check out http://angularjs.org/
+
+## Install nodemon for live reload.
+Do nodemon server/app.js
+
+## Database commands :
+To show db's:
+show databases
+
+To insert:
+db.books.insert([{
+  "title": "Rex",
+  "author": "Rex@testauthor.com",
+  "category": "Tech"
+},{
+  "title": "Nevin",
+  "author": "Nevin@testauthor.com",
+  "category": "Frad"
+},{
+  "title": "Rahul",
+  "author": "Rahul@testauthor.com",
+  "category": "Pol"
+}])
+
+
+To prettify and show all results.
+db.contactlist.find().pretty()
+
