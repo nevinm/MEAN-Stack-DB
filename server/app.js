@@ -34,9 +34,26 @@ app.get('/books', function(req, res) {
             if (err) {
                 res.send("Error has occured");
             } else {
-            	console.log(books)
+                console.log(books)
                 res.json(books);
             }
+        })
+});
+
+//Getting the books based on id
+app.get('/books/:id', function(req, res) {
+    console.log("Getting one book");
+    Book.findOne({
+            _id: req.params.id
+        })
+        .exec(function(err, book) {
+            if (err) {
+                res.send("Error has occured");
+            } else {
+                console.log(book);
+                res.json(book);
+            }
+
         })
 });
 

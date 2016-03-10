@@ -130,3 +130,4 @@ db.books.insert([{
 To prettify and show all results.
 db.contactlist.find().pretty()
 
+For more info on the demo : https://www.youtube.com/playlist?list=PLGquJ_T_JBMQ1C0Pp41sykceli8G1UGtg
