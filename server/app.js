@@ -74,4 +74,46 @@ app.post('/book', function(req, res) {
     });
 });
 
+//Another way of adding a book.
+app.post('/book2', function(req, res) {
+    Book.create(req.body, function(err, book) {
+        if (err) {
+            res.send('error saving book');
+        } else {
+            console.log(book);
+            res.send(book);
+        }
+    });
+});
+
+//Updating
+app.put('/book/:id', function(req, res) {
+    Book.findOneAndUpdate({
+        _id: req.params.id
+    }, {
+        $set: { title: req.body.title }
+    }, { upsert: true }, function(err, newBook) {
+        if (err) {
+            res.send('error updating ');
+        } else {
+            console.log(newBook);
+            res.send(newBook);
+        }
+    });
+});
+
+//Deleting
+app.delete('/book/:id', function(req, res) {
+    Book.findOneAndRemove({
+        _id: req.params.id
+    }, function(err, book) {
+        if (err) {
+            res.send('error removing')
+        } else {
+            console.log(book);
+            res.status(204);
+        }
+    });
+});
+
 app.listen(port);

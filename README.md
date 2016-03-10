@@ -114,6 +114,8 @@ node-debug app.js
 node-inspector or if port already in use -> node-inspector --web-port=9999
 nodemon --debug server/app.js
 
+## Use POSTman chrome extension to check on the POST calls.
+
 ## Database commands :
 To show db's:
 show databases
