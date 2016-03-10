@@ -43,7 +43,7 @@ app.get('/books', function(req, res) {
 //Getting the books based on id
 app.get('/books/:id', function(req, res) {
     console.log("Getting one book");
-    Book.findOne({
+    Book.find({
             _id: req.params.id
         })
         .exec(function(err, book) {
@@ -57,5 +57,21 @@ app.get('/books/:id', function(req, res) {
         })
 });
 
+//Adding a book
+app.post('/book', function(req, res) {
+    var newBook = new Book();
+
+    newBook.author = req.query.author;
+    newBook.title = req.query.title;
+    newBook.category = req.query.category;
+
+    newBook.save(function(err, book) {
+        if (err) {
+            res.send("Error saving book");
+        } else {
+            res.send(book);
+        }
+    });
+});
 
 app.listen(port);

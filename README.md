@@ -107,6 +107,13 @@ For more information on AngularJS please check out http://angularjs.org/
 ## Install nodemon for live reload.
 Do nodemon server/app.js
 
+## Install node inspector for nodejs debugging.
+npm install -g node-inspector
+node-debug app.js
+
+node-inspector or if port already in use -> node-inspector --web-port=9999
+nodemon --debug server/app.js
+
 ## Database commands :
 To show db's:
 show databases
